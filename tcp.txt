@@ -1,0 +1,125 @@
+1454925386.963676 IP (tos 0x0, ttl 64, id 61131, offset 0, flags [DF], proto TCP (6), length 68)
+192.168.1.110.50490 > 101.226.152.101.https: Flags [P.], seq 2492720927:2492720943, ack 605822410, win 110, options [nop,nop,TS val 9794765 ecr 3480337325], length 16
+1454925387.314807 IP (tos 0x0, ttl 64, id 61132, offset 0, flags [DF], proto TCP (6), length 68)
+    192.168.1.110.50490 > 101.226.152.101.https: Flags [P.], seq 0:16, ack 1, win 110, options [nop,nop,TS val 9794801 ecr 3480337325], length 16
+1454925387.674755 IP (tos 0x0, ttl 64, id 61133, offset 0, flags [DF], proto TCP (6), length 68)
+    192.168.1.110.50490 > 101.226.152.101.https: Flags [P.], seq 0:16, ack 1, win 110, options [nop,nop,TS val 9794837 ecr 3480337325], length 16
+1454925388.394757 IP (tos 0x0, ttl 64, id 61134, offset 0, flags [DF], proto TCP (6), length 68)
+    192.168.1.110.50490 > 101.226.152.101.https: Flags [P.], seq 0:16, ack 1, win 110, options [nop,nop,TS val 9794909 ecr 3480337325], length 16
+1454925389.834758 IP (tos 0x0, ttl 64, id 61135, offset 0, flags [DF], proto TCP (6), length 68)
+    192.168.1.110.50490 > 101.226.152.101.https: Flags [P.], seq 0:16, ack 1, win 110, options [nop,nop,TS val 9795053 ecr 3480337325], length 16
+1454925390.034511 IP (tos 0x0, ttl 49, id 49990, offset 0, flags [DF], proto TCP (6), length 67)
+    114.54.23.44.https > 192.168.1.110.34639: Flags [P.], seq 1751059336:1751059363, ack 68188897, win 18846, length 27
+1454925390.034648 IP (tos 0x0, ttl 64, id 10662, offset 0, flags [DF], proto TCP (6), length 40)
+    192.168.1.110.34639 > 114.54.23.44.https: Flags [.], cksum 0x615d (correct), ack 27, win 34560, length 0
+1454925390.037599 IP (tos 0x0, ttl 49, id 49991, offset 0, flags [DF], proto TCP (6), length 40)
+    114.54.23.44.https > 192.168.1.110.34639: Flags [F.], cksum 0x9ebe (correct), seq 27, ack 1, win 18846, length 0
+1454925390.074804 IP (tos 0x0, ttl 64, id 10663, offset 0, flags [DF], proto TCP (6), length 40)
+    192.168.1.110.34639 > 114.54.23.44.https: Flags [.], cksum 0x615c (correct), ack 28, win 34560, length 0
+1454925390.264778 IP (tos 0x0, ttl 64, id 37609, offset 0, flags [DF], proto TCP (6), length 52)
+    192.168.1.110.50139 > 14.17.43.118.http: Flags [F.], cksum 0xf417 (correct), seq 3336733940, ack 2250045240, win 123, options [nop,nop,TS val 9795096 ecr 2101413189], length 0
+1454925390.469774 IP (tos 0x0, ttl 49, id 7181, offset 0, flags [DF], proto TCP (6), length 67)
+    114.54.23.44.https > 192.168.1.110.34640: Flags [P.], seq 2067698771:2067698798, ack 1074404424, win 16652, length 27
+1454925390.469910 IP (tos 0x0, ttl 64, id 19218, offset 0, flags [DF], proto TCP (6), length 40)
+    192.168.1.110.34640 > 114.54.23.44.https: Flags [.], cksum 0x2af9 (correct), ack 27, win 17496, length 0
+1454925390.472934 IP (tos 0x0, ttl 49, id 7182, offset 0, flags [DF], proto TCP (6), length 40)
+    114.54.23.44.https > 192.168.1.110.34640: Flags [F.], cksum 0x2e44 (correct), seq 27, ack 1, win 16652, length 0
+1454925390.504756 IP (tos 0x0, ttl 64, id 19219, offset 0, flags [DF], proto TCP (6), length 40)
+    192.168.1.110.34640 > 114.54.23.44.https: Flags [.], cksum 0x2af8 (correct), ack 28, win 17496, length 0
+1454925392.724781 IP (tos 0x0, ttl 64, id 61136, offset 0, flags [DF], proto TCP (6), length 68)
+    192.168.1.110.50490 > 101.226.152.101.https: Flags [P.], seq 0:16, ack 1, win 110, options [nop,nop,TS val 9795342 ecr 3480337325], length 16
+1454925395.384785 IP (tos 0x0, ttl 64, id 30419, offset 0, flags [DF], proto TCP (6), length 52)
+    192.168.1.110.50138 > 14.17.43.118.http: Flags [F.], cksum 0x9502 (correct), seq 3741476986, ack 1263304222, win 123, options [nop,nop,TS val 9795608 ecr 1474117636], length 0
+1454925398.184790 IP (tos 0x0, ttl 64, id 50732, offset 0, flags [DF], proto TCP (6), length 67)
+    192.168.1.110.34627 > 114.54.23.44.https: Flags [FP.], seq 1117707577:1117707604, ack 3539747907, win 31680, length 27
+1454925398.504772 IP (tos 0x0, ttl 64, id 61137, offset 0, flags [DF], proto TCP (6), length 68)
+    192.168.1.110.50490 > 101.226.152.101.https: Flags [P.], seq 0:16, ack 1, win 110, options [nop,nop,TS val 9795920 ecr 3480337325], length 16
+1454925403.194718 ARP, Ethernet (len 6), IPv4 (len 4), Request who-has 192.168.1.1 tell 192.168.1.110, length 28
+1454925403.207582 ARP, Ethernet (len 6), IPv4 (len 4), Reply 192.168.1.1 is-at d0:c7:c0:11:e5:0a (oui Unknown), length 28
+1454925406.973621 IP (tos 0x0, ttl 64, id 61138, offset 0, flags [DF], proto TCP (6), length 52)
+    192.168.1.110.50490 > 101.226.152.101.https: Flags [F.], cksum 0x28fe (correct), seq 16, ack 1, win 110, options [nop,nop,TS val 9796766 ecr 3480337325], length 0
+1454925410.064774 IP (tos 0x0, ttl 64, id 61139, offset 0, flags [DF], proto TCP (6), length 68)
+    192.168.1.110.50490 > 101.226.152.101.https: Flags [FP.], seq 0:16, ack 1, win 110, options [nop,nop,TS val 9797076 ecr 3480337325], length 16
+1454925413.544783 IP (tos 0x0, ttl 64, id 37934, offset 0, flags [DF], proto TCP (6), length 67)
+    192.168.1.110.34625 > 114.54.23.44.https: Flags [FP.], seq 3322711151:3322711178, ack 3829085700, win 34560, length 27
+1454925418.509238 IP (tos 0x0, ttl 64, id 929, offset 0, flags [DF], proto TCP (6), length 50)
+    192.168.1.110.57444 > 113.105.137.141.34852: Flags [P.], cksum 0xe2c4 (correct), seq 4155443555:4155443565, ack 140423048, win 115, length 10
+1454925418.794777 IP (tos 0x0, ttl 64, id 930, offset 0, flags [DF], proto TCP (6), length 50)
+    192.168.1.110.57444 > 113.105.137.141.34852: Flags [P.], cksum 0xe2c4 (correct), seq 0:10, ack 1, win 115, length 10
+1454925419.084776 IP (tos 0x0, ttl 64, id 931, offset 0, flags [DF], proto TCP (6), length 50)
+    192.168.1.110.57444 > 113.105.137.141.34852: Flags [P.], cksum 0xe2c4 (correct), seq 0:10, ack 1, win 115, length 10
+1454925419.664763 IP (tos 0x0, ttl 64, id 932, offset 0, flags [DF], proto TCP (6), length 50)
+    192.168.1.110.57444 > 113.105.137.141.34852: Flags [P.], cksum 0xe2c4 (correct), seq 0:10, ack 1, win 115, length 10
+1454925420.226597 IP (tos 0x0, ttl 64, id 56833, offset 0, flags [DF], proto TCP (6), length 150)
+    192.168.1.110.44937 > 114.54.23.2.jabber-client: Flags [P.], seq 855341527:855341637, ack 1069900795, win 140, length 110
+1454925420.594774 IP (tos 0x0, ttl 64, id 56834, offset 0, flags [DF], proto TCP (6), length 150)
+    192.168.1.110.44937 > 114.54.23.2.jabber-client: Flags [P.], seq 0:110, ack 1, win 140, length 110
+1454925420.824760 IP (tos 0x0, ttl 64, id 933, offset 0, flags [DF], proto TCP (6), length 50)
+    192.168.1.110.57444 > 113.105.137.141.34852: Flags [P.], cksum 0xe2c4 (correct), seq 0:10, ack 1, win 115, length 10
+1454925420.964772 IP (tos 0x0, ttl 64, id 56835, offset 0, flags [DF], proto TCP (6), length 150)
+    192.168.1.110.44937 > 114.54.23.2.jabber-client: Flags [P.], seq 0:110, ack 1, win 140, length 110
+1454925421.704780 IP (tos 0x0, ttl 64, id 56836, offset 0, flags [DF], proto TCP (6), length 150)
+    192.168.1.110.44937 > 114.54.23.2.jabber-client: Flags [P.], seq 0:110, ack 1, win 140, length 110
+1454925423.144795 IP (tos 0x0, ttl 64, id 934, offset 0, flags [DF], proto TCP (6), length 50)
+    192.168.1.110.57444 > 113.105.137.141.34852: Flags [P.], cksum 0xe2c4 (correct), seq 0:10, ack 1, win 115, length 10
+1454925423.184765 IP (tos 0x0, ttl 64, id 56837, offset 0, flags [DF], proto TCP (6), length 150)
+    192.168.1.110.44937 > 114.54.23.2.jabber-client: Flags [P.], seq 0:110, ack 1, win 140, length 110
+1454925426.154766 IP (tos 0x0, ttl 64, id 56838, offset 0, flags [DF], proto TCP (6), length 150)
+    192.168.1.110.44937 > 114.54.23.2.jabber-client: Flags [P.], seq 0:110, ack 1, win 140, length 110
+1454925427.794761 IP (tos 0x0, ttl 64, id 935, offset 0, flags [DF], proto TCP (6), length 50)
+    192.168.1.110.57444 > 113.105.137.141.34852: Flags [P.], cksum 0xe2c4 (correct), seq 0:10, ack 1, win 115, length 10
+1454925431.757868 IP (tos 0x0, ttl 64, id 22779, offset 0, flags [DF], proto TCP (6), length 60)
+    192.168.1.110.51095 > 106.38.211.112.https: Flags [S], seq 1193402038, win 14600, options [mss 1460,sackOK,TS[|tcp]>
+1454925431.822305 IP (tos 0x0, ttl 50, id 22779, offset 0, flags [DF], proto TCP (6), length 60)
+    106.38.211.112.https > 192.168.1.110.51095: Flags [S.], seq 3583571038, ack 1193402039, win 14600, options [mss 1440,sackOK,nop,nop,nop,nop,nop,nop,nop,nop,[|tcp]>
+1454925431.822478 IP (tos 0x0, ttl 64, id 22780, offset 0, flags [DF], proto TCP (6), length 40)
+    192.168.1.110.51095 > 106.38.211.112.https: Flags [.], cksum 0xbdfa (correct), ack 1, win 14600, length 0
+1454925431.824396 IP (tos 0x0, ttl 64, id 22781, offset 0, flags [DF], proto TCP (6), length 259)
+    192.168.1.110.51095 > 106.38.211.112.https: Flags [P.], seq 1:220, ack 1, win 14600, length 219
+1454925431.883522 IP (tos 0x0, ttl 48, id 10803, offset 0, flags [DF], proto TCP (6), length 40)
+    106.38.211.112.https > 192.168.1.110.51095: Flags [.], cksum 0xb96f (correct), ack 220, win 15544, length 0
+1454925431.897483 IP (tos 0x0, ttl 48, id 10804, offset 0, flags [DF], proto TCP (6), length 1480)
+    106.38.211.112.https > 192.168.1.110.51095: Flags [.], seq 1:1441, ack 220, win 15544, length 1440
+1454925431.897628 IP (tos 0x0, ttl 64, id 22782, offset 0, flags [DF], proto TCP (6), length 40)
+    192.168.1.110.51095 > 106.38.211.112.https: Flags [.], cksum 0xad07 (correct), ack 1441, win 17280, length 0
+1454925431.899653 IP (tos 0x0, ttl 48, id 10805, offset 0, flags [DF], proto TCP (6), length 1480)
+    106.38.211.112.https > 192.168.1.110.51095: Flags [.], seq 1441:2881, ack 220, win 15544, length 1440
+1454925431.899757 IP (tos 0x0, ttl 64, id 22783, offset 0, flags [DF], proto TCP (6), length 40)
+    192.168.1.110.51095 > 106.38.211.112.https: Flags [.], cksum 0x9c27 (correct), ack 2881, win 20160, length 0
+1454925431.902799 IP (tos 0x0, ttl 48, id 10806, offset 0, flags [DF], proto TCP (6), length 1256)
+    106.38.211.112.https > 192.168.1.110.51095: Flags [P.], seq 2881:4097, ack 220, win 15544, length 1216
+1454925431.902889 IP (tos 0x0, ttl 64, id 22784, offset 0, flags [DF], proto TCP (6), length 40)
+    192.168.1.110.51095 > 106.38.211.112.https: Flags [.], cksum 0x8c27 (correct), ack 4097, win 23040, length 0
+1454925431.996420 IP (tos 0x0, ttl 48, id 10807, offset 0, flags [DF], proto TCP (6), length 801)
+    106.38.211.112.https > 192.168.1.110.51095: Flags [P.], seq 4097:4858, ack 220, win 15544, length 761
+1454925431.996562 IP (tos 0x0, ttl 64, id 22785, offset 0, flags [DF], proto TCP (6), length 40)
+    192.168.1.110.51095 > 106.38.211.112.https: Flags [.], cksum 0x7dee (correct), ack 4858, win 25920, length 0
+1454925432.049821 IP (tos 0x0, ttl 64, id 22786, offset 0, flags [DF], proto TCP (6), length 366)
+    192.168.1.110.51095 > 106.38.211.112.https: Flags [P.], seq 220:546, ack 4858, win 25920, length 326
+1454925432.084757 IP (tos 0x0, ttl 64, id 56839, offset 0, flags [DF], proto TCP (6), length 150)
+    192.168.1.110.44937 > 114.54.23.2.jabber-client: Flags [P.], seq 0:110, ack 1, win 140, length 110
+1454925432.112639 IP (tos 0x0, ttl 48, id 10808, offset 0, flags [DF], proto TCP (6), length 306)
+    106.38.211.112.https > 192.168.1.110.51095: Flags [P.], seq 4858:5124, ack 546, win 16616, length 266
+1454925432.112798 IP (tos 0x0, ttl 64, id 22787, offset 0, flags [DF], proto TCP (6), length 40)
+    192.168.1.110.51095 > 106.38.211.112.https: Flags [.], cksum 0x705e (correct), ack 5124, win 28800, length 0
+1454925432.130648 IP (tos 0x0, ttl 64, id 22788, offset 0, flags [DF], proto TCP (6), length 1149)
+    192.168.1.110.51095 > 106.38.211.112.https: Flags [P.], seq 546:1655, ack 5124, win 28800, length 1109
+1454925432.210058 IP (tos 0x0, ttl 48, id 10809, offset 0, flags [DF], proto TCP (6), length 381)
+    106.38.211.112.https > 192.168.1.110.51095: Flags [P.], seq 5124:5465, ack 1655, win 18853, length 341
+1454925432.210548 IP (tos 0x0, ttl 48, id 10810, offset 0, flags [DF], proto TCP (6), length 77)
+    106.38.211.112.https > 192.168.1.110.51095: Flags [FP.], seq 5465:5502, ack 1655, win 18853, length 37
+1454925432.215304 IP (tos 0x0, ttl 64, id 22789, offset 0, flags [DF], proto TCP (6), length 77)
+    192.168.1.110.51095 > 106.38.211.112.https: Flags [P.], seq 1655:1692, ack 5503, win 31680, length 37
+1454925432.215639 IP (tos 0x0, ttl 64, id 22790, offset 0, flags [DF], proto TCP (6), length 40)
+    192.168.1.110.51095 > 106.38.211.112.https: Flags [R.], cksum 0x5f25 (correct), seq 1692, ack 5503, win 31680, length 0
+1454925432.269832 IP (tos 0x0, ttl 48, id 0, offset 0, flags [DF], proto TCP (6), length 40)
+    106.38.211.112.https > 192.168.1.110.51095: Flags [R], cksum 0xfdce (correct), seq 3583576541, win 0, length 0
+1454925433.144814 IP (tos 0x0, ttl 64, id 61140, offset 0, flags [DF], proto TCP (6), length 68)
+    192.168.1.110.50490 > 101.226.152.101.https: Flags [FP.], seq 0:16, ack 1, win 110, options [nop,nop,TS val 9799384 ecr 3480337325], length 16
+1454925435.244579 IP (tos 0x0, ttl 64, id 56840, offset 0, flags [DF], proto TCP (6), length 56)
+    192.168.1.110.44937 > 114.54.23.2.jabber-client: Flags [FP.], seq 110:126, ack 1, win 140, length 16
+1454925437.104783 IP (tos 0x0, ttl 64, id 936, offset 0, flags [DF], proto TCP (6), length 50)
+    192.168.1.110.57444 > 113.105.137.141.34852: Flags [P.], cksum 0xe2c4 (correct), seq 0:10, ack 1, win 115, length 10
+1454925437.325491 IP (tos 0x0, ttl 64, id 2209, offset 0, flags [DF], proto TCP (6), length 60)
+    192.168.1.110.36850 > 41.224.151.61.dial.xw.sh.dynamic.163data.com.cn.http: Flags [S], seq 913473755, win 14000, options [mss 1400,sackOK,TS[|tcp]>
+
