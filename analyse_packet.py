@@ -26,7 +26,7 @@ def my_re_of_second_line(second_line):
         print 'my_re_of_second_line: ok'
         print "my_re_of_second_line: \n", m.groups(0)
         print "****group(x): \n", m.groups(1)[1:4]
-        quintet = Quintet(m.groups(1)[0],m.groups(1)[1],m.groups(1)[2],m.groups(1)[3],m.groups(1)[4])
+        quintet = base_module.Quintet(m.groups(1)[0],m.groups(1)[1],m.groups(1)[2],m.groups(1)[3],m.groups(1)[4])
         return quintet
     else:
         print 'my_re_of_second_line: failed'
@@ -39,8 +39,8 @@ def analyse_tcpdump(file_name):
         i = i+1
         if not line:
             break
-        #if i > 10:
-        #    break
+        if i > 10:
+            break
         if i%2 != 0:
             my_re_of_first_line(line)
         else:

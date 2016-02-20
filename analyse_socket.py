@@ -25,8 +25,8 @@ def analyse_lsof(file_name):
     file = open(file_name)
     i = 0
     while 1:
-        #    if i > 10:
-        #        break
+        if i > 10:
+            break
         i = i+1
         line = file.readline()
         if not line:
