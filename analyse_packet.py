@@ -36,7 +36,7 @@ def my_re_of_first_line(first_line, packet):
 
 def my_re_of_second_line(second_line, packet):
     second_line = re.sub("\s+",'',second_line)
-    m = re.match(r'(\w+.\w+.\w+.\w+).(\w+)>(\w+.\w+.\w+.\w+).(\w*):.*?\[(.*?)\]', second_line)
+    m = re.match(r'(\w+.\w+.\w+.\w+).(\w+)>(\w+.\w+.\w+.\w+).(.*):Flags\[(.*?)\]', second_line)
     if m:
         print 'my_re_of_second_line: ok'
         print "my_re_of_second_line: \n", m.groups(0)
@@ -58,8 +58,8 @@ def analyse_tcpdump(file_name):
         i = i+1
         if not line:
             break
-        if i > 30:
-            break
+#        if i > 30:
+#            break
         if i%2 != 0:
             my_re_of_first_line(line, packet)
         else:
