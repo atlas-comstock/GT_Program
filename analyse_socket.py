@@ -26,6 +26,7 @@ def analyse_lsof(file_name):
     i = 0
     mysockets = [base_module.Socket]
     while 1:
+        print i
         #        if i > 10:
         #            break
         i = i+1
@@ -38,19 +39,19 @@ def analyse_lsof(file_name):
             IP_type = line[1:]
         elif line[0] == 'p':
             process_ID = line[1:]
-            if i != 2:
+            if i > 10:
                 mysockets.append(base_module.Socket(process_command_name, IP_type, process_ID, protocol_name, quintet, time_stamp))
-            elif line[0] == 'P':
-                protocol_name = line[1:]
-            elif line[0] == 'n':
-                Internet_address = line[1:]
-                quintet = my_re(Internet_address)
-            elif line[0] == 'f':
-                status = line[1:]
-                #print "status ", status
-            else:
-                time_stamp = line
-                return mysockets
+        elif line[0] == 'P':
+             protocol_name = line[1:]
+        elif line[0] == 'n':
+             Internet_address = line[1:]
+             quintet = my_re(Internet_address)
+        elif line[0] == 'f':
+             status = line[1:]
+             #print "status ", status
+        else:
+            time_stamp = line
+    return mysockets
 
 def print_Quintet(quintet):
     print "SrcIp ", quintet.SrcIp
