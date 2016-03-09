@@ -15,7 +15,7 @@ print "main program \n"
 #analyse_socket.print_sockets(mysockets[2])
 #analyse_socket.print_sockets(mysockets[4])
 #analyse_socket.print_sockets(mysockets[9])
-mypackets = analyse_packet.analyse_tcpdump("tcp.txt")
+mypackets = analyse_packet.analyse_tcpdump("new.txt")
 analyse_packet.print_packets(mypackets[1])
 #analyse_packet.print_packets(mypackets[2])
 #analyse_packet.print_packets(mypackets[3])

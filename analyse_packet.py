@@ -19,21 +19,6 @@ class Packet(object):
         self.flag = flag
         self.time_stamp = time_stamp
 
-def my_re_of_first_line(first_line, packet):
-    m = re.match(r'(\w+.\w+)(.*)proto\s(.*)length\s(\d+)\)', first_line)
-    if m:
-        print 'my_re_of_first_line: ok'
-        print "my_re_of_first_line: \n", m.groups(0)
-        packet.time_stamp = m.groups(1)[0]
-        packet.protocol_name = m.groups(1)[2]
-        packet.packet_length = m.groups(1)[3]
-#        print "group(x): \n", m.groups(1)[0]
-#        print "group(x): \n", m.groups(1)[1]
-#        print "group(x): \n", m.groups(1)[2]
-#        print "group(x): \n", m.groups(1)[3]
-    else:
-        print 'my_re_of_first_line: failed'
-
 def my_re_of_second_line(second_line, packet):
     second_line = re.sub("\s+",'',second_line)
     m = re.match(r'(\w+.\w+.\w+.\w+).(\w+)>(\w+.\w+.\w+.\w+).(.*):Flags\[(.*?)\]', second_line)
@@ -44,9 +29,33 @@ def my_re_of_second_line(second_line, packet):
         quintet = base_module.Quintet(m.groups(1)[0],m.groups(1)[1],m.groups(1)[2],m.groups(1)[3],m.groups(1)[4])
         packet.quintet = quintet
         packet.flag = m.groups(1)[4]
+        return 1
     else:
         print 'my_re_of_second_line: failed************\n\n'
         print second_line
+        return 0
+
+
+def my_re_of_first_line(first_line, packet):
+    m = re.match(r'(\w+.\w+)(.*)proto\s(.*)length\s(\d+)\)', first_line)
+    if m:
+        print 'my_re_of_first_line: ok'
+        print "my_re_of_first_line: \n", m.groups(0)
+        packet.time_stamp = m.groups(1)[0]
+        packet.protocol_name = m.groups(1)[2]
+        packet.packet_length = m.groups(1)[3]
+        return 1
+#        print "group(x): \n", m.groups(1)[0]
+#        print "group(x): \n", m.groups(1)[1]
+#        print "group(x): \n", m.groups(1)[2]
+#        print "group(x): \n", m.groups(1)[3]
+    else:
+        print first_line
+        if my_re_of_second_line(first_line, packet):
+            return 1
+        else:
+            print 'my_re_of1,2: failed'
+            return 0
 
 def analyse_tcpdump(file_name):
     file = open(file_name)
@@ -60,10 +69,7 @@ def analyse_tcpdump(file_name):
             break
 #        if i > 30:
 #            break
-        if i%2 != 0:
-            my_re_of_first_line(line, packet)
-        else:
-            my_re_of_second_line(line, packet)
+        if my_re_of_first_line(line, packet):
             all_packets.append(packet)
     return all_packets
 

@@ -20,6 +20,7 @@ def my_re(Internet_address):
         return quintet
     else:
         print 'failed'
+        print Internet_address
 
 def analyse_lsof(file_name):
     file = open(file_name)
