@@ -24,20 +24,20 @@ class Packet(object):
 def my_re_of_second_line(second_line, packet):
     second_line = re.sub("\s+",'',second_line)
     m = re.match(r'(\w+.\w+.\w+.\w+).(\w+)>(\w+.\w+.\w+.\w+).(.*):Flags\[(.*?)\]', second_line)
-    if m!=1:
+    if m == None:
         m = re.match(r'(\w+.\w+.\w+.\w+).(\w+)>(\w+.\w+.\w+.\w+).(\w+):', second_line)
-    else:
-        print "fuck"
-        return 0
+        if m == None:
+            print "fuck"
+            return 0
     if m:
         print 'my_re_of_second_line: ok'
         print "my_re_of_second_line: \n", m.groups(0)
         quintet = base_module.Quintet(m.groups(1)[0],m.groups(1)[1],m.groups(1)[2],m.groups(1)[3],'.')
         packet.quintet = quintet
-        if len(m.groups(1))<4:
+        if len(m.groups(1))>=5:
             packet.flag = m.groups(1)[4]
         else:
-            packet.flag = '.'
+            packet.flag = len(m.groups(1))
         m = re.match(r'(\w+).(\w+).(\w+).(\w+)', quintet.SrcIp)
         if m:
             a = string.atoi(m.groups(1)[0])
