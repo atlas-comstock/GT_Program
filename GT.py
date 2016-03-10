@@ -65,4 +65,5 @@ print "unknow  is ", unknow
 list_length = [int(i) for i in list_length]
 print min(list_length)
 print max(list_length)
+print sum(list_length)/len(list_length)
 #print mypackets.packet_length.index(min(mypackets.packet_length))
