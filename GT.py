@@ -43,14 +43,18 @@ num_of_forward_message = 0
 num_of_backward_message = 0
 unknow = 0
 list_length = []
+forward_msg_length = []
+backward_msg_length = []
 for single_packet in mypackets:
     #print single_packet.packet_length
     list_length.append(single_packet.packet_length)
     if single_packet.is_forward_message == 1:
+        forward_msg_length.append(single_packet.packet_length)
         num_of_forward_message = num_of_forward_message+1
         print "forward ", single_packet.quintet.SrcIp, single_packet.quintet.SrcPort
         print "backward ", single_packet.quintet.DstIP, single_packet.quintet.DstPort, "\n"
     elif single_packet.is_forward_message == 0:
+        backward_msg_length.append(single_packet.packet_length)
         num_of_backward_message = num_of_backward_message+1
         print "forward ", single_packet.quintet.SrcIp, single_packet.quintet.SrcPort, "\n"
         print "backward ", single_packet.quintet.DstIP, single_packet.quintet.DstPort
@@ -62,8 +66,22 @@ print "\nnum_of_backward_message is ", num_of_backward_message
 print "unknow  is ", unknow
 
 # Convert all strings in a list to int
+print "list_length"
 list_length = [int(i) for i in list_length]
 print min(list_length)
 print max(list_length)
 print sum(list_length)/len(list_length)
+
+print "forward_msg_length"
+forward_msg_length = [int(i) for i in forward_msg_length]
+print min(forward_msg_length)
+print max(forward_msg_length)
+print sum(forward_msg_length)/len(forward_msg_length)
+
+
+print "backward_msg_length"
+backward_msg_length = [int(i) for i in backward_msg_length]
+print min(backward_msg_length)
+print max(backward_msg_length)
+print sum(backward_msg_length)/len(backward_msg_length)
 #print mypackets.packet_length.index(min(mypackets.packet_length))
