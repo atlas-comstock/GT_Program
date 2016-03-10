@@ -12,11 +12,11 @@ import re
 import string
 
 class Packet(object):
-    def __init__(self, packet_length, protocol_name, Quintet, flag, time_stamp, is_forward_message):
+    def __init__(self, packet_length, protocol_name, quintet, flag, time_stamp, is_forward_message):
         pass
         self.packet_length = packet_length
         self.protocol_name = protocol_name
-        self.Quintet = Quintet
+        self.quintet = base_module.Quintet(packet.quintet.SrcIp, packet.quintet.SrcPort, packet.quintet.DstIP, packet.quintet.DstPort, packet.quintet.Stat)
         self.flag = flag
         self.time_stamp = time_stamp
         self.is_forward_message = is_forward_message
@@ -24,13 +24,20 @@ class Packet(object):
 def my_re_of_second_line(second_line, packet):
     second_line = re.sub("\s+",'',second_line)
     m = re.match(r'(\w+.\w+.\w+.\w+).(\w+)>(\w+.\w+.\w+.\w+).(.*):Flags\[(.*?)\]', second_line)
+    if m!=1:
+        m = re.match(r'(\w+.\w+.\w+.\w+).(\w+)>(\w+.\w+.\w+.\w+).(\w+):', second_line)
+    else:
+        print "fuck"
+        return 0
     if m:
         print 'my_re_of_second_line: ok'
         print "my_re_of_second_line: \n", m.groups(0)
-        print "****group(x): \n", m.groups(1)[1:4]
-        quintet = base_module.Quintet(m.groups(1)[0],m.groups(1)[1],m.groups(1)[2],m.groups(1)[3],m.groups(1)[4])
+        quintet = base_module.Quintet(m.groups(1)[0],m.groups(1)[1],m.groups(1)[2],m.groups(1)[3],'.')
         packet.quintet = quintet
-        packet.flag = m.groups(1)[4]
+        if len(m.groups(1))<4:
+            packet.flag = m.groups(1)[4]
+        else:
+            packet.flag = '.'
         m = re.match(r'(\w+).(\w+).(\w+).(\w+)', quintet.SrcIp)
         if m:
             a = string.atoi(m.groups(1)[0])
@@ -91,8 +98,9 @@ def analyse_tcpdump(file_name):
 #        if i > 30:
 #            break
         if my_re_of_first_line(line, packet):
-            all_packets.append(Packet(packet.packet_length, packet.protocol_name, packet.quintet, packet.flag, packet.time_stamp, packet.is_forward_message))
-            print "print packe"
+            my_quintet = base_module.Quintet(packet.quintet.SrcIp, packet.quintet.SrcPort, packet.quintet.DstIP, packet.quintet.DstPort, packet.quintet.Stat)
+            all_packets.append(Packet(packet.packet_length, packet.protocol_name, my_quintet, packet.flag, packet.time_stamp, packet.is_forward_message))
+            print "printf packet"
             print_packets(packet)
     print "final"
     print_packets(all_packets[1])
@@ -100,6 +108,13 @@ def analyse_tcpdump(file_name):
     print_packets(all_packets[3])
     print_packets(all_packets[9])
     print_packets(all_packets[19])
+    print_packets(all_packets[39])
+    print_packets(all_packets[49])
+    print_packets(all_packets[59])
+    print_packets(all_packets[69])
+    print_packets(all_packets[79])
+    print_packets(all_packets[89])
+    print "end"
     return all_packets
 
 def print_Quintet(quintet):
