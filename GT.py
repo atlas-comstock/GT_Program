@@ -42,7 +42,10 @@ analyse_packet.print_packets(mypackets[49])
 num_of_forward_message = 0
 num_of_backward_message = 0
 unknow = 0
+list_length = []
 for single_packet in mypackets:
+    #print single_packet.packet_length
+    list_length.append(single_packet.packet_length)
     if single_packet.is_forward_message == 1:
         num_of_forward_message = num_of_forward_message+1
         print "forward ", single_packet.quintet.SrcIp, single_packet.quintet.SrcPort
@@ -57,3 +60,9 @@ for single_packet in mypackets:
 print "\n\n\nnum_of_forward_message is ", num_of_forward_message
 print "\nnum_of_backward_message is ", num_of_backward_message
 print "unknow  is ", unknow
+
+# Convert all strings in a list to int
+list_length = [int(i) for i in list_length]
+print min(list_length)
+print max(list_length)
+#print mypackets.packet_length.index(min(mypackets.packet_length))
