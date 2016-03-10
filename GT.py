@@ -31,23 +31,20 @@ print "main program \n"
 #analyse_socket.print_sockets(mysockets[4])
 #analyse_socket.print_sockets(mysockets[9])
 mypackets = analyse_packet.analyse_tcpdump("new.txt")
+print len(mypackets)
+analyse_packet.print_packets(mypackets[0])
 analyse_packet.print_packets(mypackets[1])
-analyse_packet.print_packets(mypackets[2])
-analyse_packet.print_packets(mypackets[3])
-analyse_packet.print_packets(mypackets[9])
-analyse_packet.print_packets(mypackets[19])
-analyse_packet.print_packets(mypackets[29])
-analyse_packet.print_packets(mypackets[49])
+analyse_packet.print_packets(mypackets[len(mypackets)-1])
+analyse_packet.print_packets(mypackets[len(mypackets)-2])
 
-num_of_urgent_forward_message = num_of_urgent_backward_message = num_of_push_forward_message = num_of_push_backward_message = num_of_forward_message =  num_of_backward_message = 0
+num_of_urgent_forward_message = num_of_urgent_backward_message = num_of_push_forward_message = num_of_push_backward_message = num_of_forward_message =  num_of_backward_message =  0
 unknow = 0
-list_length = []
-forward_msg_length = []
-backward_msg_length = []
+list_length = forward_msg_length = backward_msg_length = arrive_timegap_of_forward_message = arrive_timegap_of_backward_message = []
 for single_packet in mypackets:
     #print single_packet.packet_length
     list_length.append(single_packet.packet_length)
     if single_packet.is_forward_message == 1:
+        arrive_timegap_of_forward_message.append(float(mypackets[mypackets.index(single_packet)+1].time_stamp) - float(single_packet.time_stamp))
         forward_msg_length.append(single_packet.packet_length)
         num_of_forward_message = num_of_forward_message+1
         if single_packet.flag == 'P.':
@@ -92,4 +89,14 @@ print "num_of_push_forward_message"
 print num_of_push_forward_message
 print "num_of_push_backward_message"
 print num_of_push_backward_message
-#print mypackets.packet_length.index(min(mypackets.packet_length))
+
+
+print "arrive_timegap_of_forward_message"
+print min(arrive_timegap_of_forward_message)
+print max(arrive_timegap_of_forward_message)
+print "time_duration_of_stream"
+print mypackets[0].time_stamp
+print float(mypackets[0].time_stamp)
+print (mypackets[len(mypackets)-1].time_stamp)
+print float(mypackets[len(mypackets)-1].time_stamp)
+print float(mypackets[len(mypackets)-1].time_stamp) - float(mypackets[0].time_stamp)

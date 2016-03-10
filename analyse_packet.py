@@ -103,9 +103,9 @@ def analyse_tcpdump(file_name):
             print "printf packet"
             print_packets(packet)
     print "final"
+    print_packets(all_packets[0])
     print_packets(all_packets[1])
     print_packets(all_packets[2])
-    print_packets(all_packets[3])
     print_packets(all_packets[9])
     print_packets(all_packets[19])
     print_packets(all_packets[39])
@@ -129,4 +129,5 @@ def print_packets(mypackets):
     print "protocol_name ", mypackets.protocol_name
     print_Quintet(mypackets.quintet)
     print "flag ", mypackets.flag
+    print "is_forwar_message", mypackets.is_forward_message
     print "time_stamp ", mypackets.time_stamp, "\n\n"
