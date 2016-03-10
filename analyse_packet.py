@@ -37,6 +37,7 @@ def my_re_of_second_line(second_line, packet):
             b = string.atoi(m.groups(1)[1])
             c = string.atoi(m.groups(1)[2])
             d = string.atoi(m.groups(1)[3])
+            #local ip or remote ip
             if a==10 & b>=0 & b<=255 & c>=0 & c<=255 & d>=0 & d<=255:
                 packet.is_forward_message = 1
             elif a==172 & b>=16 & b<=31 & c>=0 & c<=255 & d>=0 & d<=255:
@@ -77,10 +78,10 @@ def my_re_of_first_line(first_line, packet):
             print 'my_re_of1,2: failed'
             return 0
 
+packet = Packet
 def analyse_tcpdump(file_name):
     file = open(file_name)
     i = 0
-    packet = Packet
     all_packets = [Packet]
     while 1:
         line = file.readline()
@@ -90,7 +91,15 @@ def analyse_tcpdump(file_name):
 #        if i > 30:
 #            break
         if my_re_of_first_line(line, packet):
-            all_packets.append(packet)
+            all_packets.append(Packet(packet.packet_length, packet.protocol_name, packet.quintet, packet.flag, packet.time_stamp, packet.is_forward_message))
+            print "print packe"
+            print_packets(packet)
+    print "final"
+    print_packets(all_packets[1])
+    print_packets(all_packets[2])
+    print_packets(all_packets[3])
+    print_packets(all_packets[9])
+    print_packets(all_packets[19])
     return all_packets
 
 def print_Quintet(quintet):
@@ -105,4 +114,4 @@ def print_packets(mypackets):
     print "protocol_name ", mypackets.protocol_name
     print_Quintet(mypackets.quintet)
     print "flag ", mypackets.flag
-    print "time_stamp ", mypackets.time_stamp
+    print "time_stamp ", mypackets.time_stamp, "\n\n"

@@ -32,7 +32,28 @@ print "main program \n"
 #analyse_socket.print_sockets(mysockets[9])
 mypackets = analyse_packet.analyse_tcpdump("new.txt")
 analyse_packet.print_packets(mypackets[1])
-#analyse_packet.print_packets(mypackets[2])
-#analyse_packet.print_packets(mypackets[3])
+analyse_packet.print_packets(mypackets[2])
+analyse_packet.print_packets(mypackets[3])
 analyse_packet.print_packets(mypackets[9])
+analyse_packet.print_packets(mypackets[19])
+analyse_packet.print_packets(mypackets[29])
+analyse_packet.print_packets(mypackets[49])
 
+num_of_forward_message = 0
+num_of_backward_message = 0
+unknow = 0
+for single_packet in mypackets:
+    if single_packet.is_forward_message == 1:
+        num_of_forward_message = num_of_forward_message+1
+        print "forward ", single_packet.quintet.SrcIp, single_packet.quintet.SrcPort
+        print "backward ", single_packet.quintet.DstIP, single_packet.quintet.DstPort, "\n"
+    elif single_packet.is_forward_message == 0:
+        num_of_backward_message = num_of_backward_message+1
+        print "forward ", single_packet.quintet.SrcIp, single_packet.quintet.SrcPort, "\n"
+        print "backward ", single_packet.quintet.DstIP, single_packet.quintet.DstPort
+    else:
+        unknow = unknow + 1
+
+print "\n\n\nnum_of_forward_message is ", num_of_forward_message
+print "\nnum_of_backward_message is ", num_of_backward_message
+print "unknow  is ", unknow
