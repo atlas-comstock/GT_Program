@@ -101,12 +101,9 @@ print num_of_push_backward_message
 print "arrive_timegap_of_forward_message"
 print min(arrive_timegap_of_forward_message)
 print max(arrive_timegap_of_forward_message)
+print sum(arrive_timegap_of_forward_message)/len(arrive_timegap_of_forward_message)
 print "time_duration_of_stream"
 print min(all_timestamp)
 print max(all_timestamp)
 print float(max(all_timestamp)) - float(min(all_timestamp))
-
-print "arrive"
-for i in arrive_timegap_of_forward_message:
-    print i
 
