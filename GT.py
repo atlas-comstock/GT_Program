@@ -39,10 +39,17 @@ analyse_packet.print_packets(mypackets[len(mypackets)-2])
 
 num_of_urgent_forward_message = num_of_urgent_backward_message = num_of_push_forward_message = num_of_push_backward_message = num_of_forward_message =  num_of_backward_message =  0
 unknow = 0
-list_length = forward_msg_length = backward_msg_length = arrive_timegap_of_forward_message = arrive_timegap_of_backward_message = []
+list_length = []
+forward_msg_length = []
+backward_msg_length = []
+arrive_timegap_of_forward_message = []
+arrive_timegap_of_backward_message = []
+all_timestamp = []
 for single_packet in mypackets:
     #print single_packet.packet_length
+    all_timestamp.append(single_packet.time_stamp)
     list_length.append(single_packet.packet_length)
+    print single_packet.time_stamp
     if single_packet.is_forward_message == 1:
         arrive_timegap_of_forward_message.append(float(mypackets[mypackets.index(single_packet)+1].time_stamp) - float(single_packet.time_stamp))
         forward_msg_length.append(single_packet.packet_length)
@@ -95,8 +102,11 @@ print "arrive_timegap_of_forward_message"
 print min(arrive_timegap_of_forward_message)
 print max(arrive_timegap_of_forward_message)
 print "time_duration_of_stream"
-print mypackets[0].time_stamp
-print float(mypackets[0].time_stamp)
-print (mypackets[len(mypackets)-1].time_stamp)
-print float(mypackets[len(mypackets)-1].time_stamp)
-print float(mypackets[len(mypackets)-1].time_stamp) - float(mypackets[0].time_stamp)
+print min(all_timestamp)
+print max(all_timestamp)
+print float(max(all_timestamp)) - float(min(all_timestamp))
+
+print "arrive"
+for i in arrive_timegap_of_forward_message:
+    print i
+

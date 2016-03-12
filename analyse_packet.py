@@ -27,7 +27,8 @@ def my_re_of_second_line(second_line, packet):
     if m == None:
         m = re.match(r'(\w+.\w+.\w+.\w+).(\w+)>(\w+.\w+.\w+.\w+).(\w+):', second_line)
         if m == None:
-            print "fuck"
+            print "fuck is"
+            print second_line
             return 0
     if m:
         print 'my_re_of_second_line: ok'
@@ -68,7 +69,7 @@ def my_re_of_first_line(first_line, packet):
     m = re.match(r'(\w+.\w+)(.*)proto\s(.*)length\s(\d+)\)', first_line)
     if m:
         print 'my_re_of_first_line: ok'
-        print "my_re_of_first_line: \n", m.groups(0)
+        print "my_re_of_first_line: \n", m.groups(1)[0]
         packet.time_stamp = m.groups(1)[0]
         packet.protocol_name = m.groups(1)[2]
         packet.packet_length = m.groups(1)[3]
@@ -100,8 +101,13 @@ def analyse_tcpdump(file_name):
         if my_re_of_first_line(line, packet):
             my_quintet = base_module.Quintet(packet.quintet.SrcIp, packet.quintet.SrcPort, packet.quintet.DstIP, packet.quintet.DstPort, packet.quintet.Stat)
             all_packets.append(Packet(packet.packet_length, packet.protocol_name, my_quintet, packet.flag, packet.time_stamp, packet.is_forward_message))
+            print "printf packet[0]"
+            print_packets(all_packets[0])
+            print all_packets[0].time_stamp
             print "printf packet"
+            print packet.time_stamp
             print_packets(packet)
+            #packet.time_stamp = -2
     print "final"
     print_packets(all_packets[0])
     print_packets(all_packets[1])
