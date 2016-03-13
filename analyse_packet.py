@@ -90,7 +90,7 @@ packet = Packet
 def analyse_tcpdump(file_name):
     file = open(file_name)
     i = 0
-    all_packets = [Packet]
+    all_packets = []
     while 1:
         line = file.readline()
         i = i+1
@@ -101,13 +101,8 @@ def analyse_tcpdump(file_name):
         if my_re_of_first_line(line, packet):
             my_quintet = base_module.Quintet(packet.quintet.SrcIp, packet.quintet.SrcPort, packet.quintet.DstIP, packet.quintet.DstPort, packet.quintet.Stat)
             all_packets.append(Packet(packet.packet_length, packet.protocol_name, my_quintet, packet.flag, packet.time_stamp, packet.is_forward_message))
-            print "printf packet[0]"
-            print_packets(all_packets[0])
-            print all_packets[0].time_stamp
             print "printf packet"
-            print packet.time_stamp
             print_packets(packet)
-            #packet.time_stamp = -2
     print "final"
     print_packets(all_packets[0])
     print_packets(all_packets[1])

@@ -49,9 +49,20 @@ for single_packet in mypackets:
     #print single_packet.packet_length
     all_timestamp.append(single_packet.time_stamp)
     list_length.append(single_packet.packet_length)
-    print single_packet.time_stamp
+    precision = 1e-6
+    if mypackets.index(single_packet)+1 != len(mypackets):
+        diff = abs(float(mypackets[mypackets.index(single_packet)+1].time_stamp) - float(single_packet.time_stamp))
+        if diff < precision:
+            print "less"
+            print diff
+            diff = 0
+            print float(mypackets[mypackets.index(single_packet)].time_stamp)
+            print float(mypackets[mypackets.index(single_packet)+1].time_stamp)
+            print (mypackets[mypackets.index(single_packet)].time_stamp)
+            print (mypackets[mypackets.index(single_packet)+1].time_stamp)
+
     if single_packet.is_forward_message == 1:
-        arrive_timegap_of_forward_message.append(float(mypackets[mypackets.index(single_packet)+1].time_stamp) - float(single_packet.time_stamp))
+        arrive_timegap_of_forward_message.append(diff)
         forward_msg_length.append(single_packet.packet_length)
         num_of_forward_message = num_of_forward_message+1
         if single_packet.flag == 'P.':
@@ -59,6 +70,7 @@ for single_packet in mypackets:
         print "forward ", single_packet.quintet.SrcIp, single_packet.quintet.SrcPort
         print "backward ", single_packet.quintet.DstIP, single_packet.quintet.DstPort, "\n"
     elif single_packet.is_forward_message == 0:
+        arrive_timegap_of_backward_message.append(diff)
         backward_msg_length.append(single_packet.packet_length)
         num_of_backward_message = num_of_backward_message+1
         if single_packet.flag == 'P.':
@@ -102,8 +114,14 @@ print "arrive_timegap_of_forward_message"
 print min(arrive_timegap_of_forward_message)
 print max(arrive_timegap_of_forward_message)
 print sum(arrive_timegap_of_forward_message)/len(arrive_timegap_of_forward_message)
+print "arrive_timegap_of_backward_message"
+print min(arrive_timegap_of_backward_message)
+print max(arrive_timegap_of_backward_message)
+print sum(arrive_timegap_of_backward_message)/len(arrive_timegap_of_backward_message)
 print "time_duration_of_stream"
 print min(all_timestamp)
 print max(all_timestamp)
 print float(max(all_timestamp)) - float(min(all_timestamp))
 
+#for i in arrive_timegap_of_backward_message:
+#    print i
