@@ -39,7 +39,7 @@ analyse_packet.print_packets(mypackets[len(mypackets)-2])
 
 num_of_urgent_forward_message = num_of_urgent_backward_message = num_of_push_forward_message = num_of_push_backward_message = num_of_forward_message =  num_of_backward_message =  0
 unknow = 0
-list_length = []
+all_packet_length = []
 forward_msg_length = []
 backward_msg_length = []
 arrive_timegap_of_forward_message = []
@@ -48,7 +48,7 @@ all_timestamp = []
 for single_packet in mypackets:
     #print single_packet.packet_length
     all_timestamp.append(single_packet.time_stamp)
-    list_length.append(single_packet.packet_length)
+    all_packet_length.append(single_packet.packet_length)
     precision = 1e-6
     if mypackets.index(single_packet)+1 != len(mypackets):
         diff = abs(float(mypackets[mypackets.index(single_packet)+1].time_stamp) - float(single_packet.time_stamp))
@@ -83,18 +83,23 @@ for single_packet in mypackets:
 print "\n\n\nnum_of_forward_message is ", num_of_forward_message
 print "\nnum_of_backward_message is ", num_of_backward_message
 print "unknow  is ", unknow
+all_packet_length = [int(i) for i in all_packet_length]
+print "\n\n\nsum_of_forward_message is ", num_of_forward_message
+print "\nsum_of_backward_message is ", num_of_backward_message
+print "unknow  is ", unknow
 
-# Convert all strings in a list to int
-print "list_length"
-list_length = [int(i) for i in list_length]
-print min(list_length)
-print max(list_length)
-print sum(list_length)/len(list_length)
+## Convert all strings in a list to int
+#print "all_packet_length"
+#all_packet_length = [int(i) for i in all_packet_length]
+#print min(all_packet_length)
+#print max(all_packet_length)
+#print sum(all_packet_length)/len(all_packet_length)
 
 print "forward_msg_length"
 forward_msg_length = [int(i) for i in forward_msg_length]
 print min(forward_msg_length)
 print max(forward_msg_length)
+print sum(forward_msg_length)
 print sum(forward_msg_length)/len(forward_msg_length)
 
 
@@ -102,6 +107,7 @@ print "backward_msg_length"
 backward_msg_length = [int(i) for i in backward_msg_length]
 print min(backward_msg_length)
 print max(backward_msg_length)
+print sum(backward_msg_length)
 print sum(backward_msg_length)/len(backward_msg_length)
 
 print "num_of_push_forward_message"
