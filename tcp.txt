@@ -1,3 +1,5 @@
+1454925437.325491 IP (tos 0x0, ttl 64, id 2209, offset 0, flags [DF], proto TCP (6), length 60)
+    192.168.1.110.36850 > 41.224.151.61.dial.xw.sh.dynamic.163data.com.cn.http: Flags [S], seq 913473755, win 14000, options [mss 1400,sackOK,TS[|tcp]>
 1454925386.963676 IP (tos 0x0, ttl 64, id 61131, offset 0, flags [DF], proto TCP (6), length 68)
 192.168.1.110.50490 > 101.226.152.101.https: Flags [P.], seq 2492720927:2492720943, ack 605822410, win 110, options [nop,nop,TS val 9794765 ecr 3480337325], length 16
 1454925387.314807 IP (tos 0x0, ttl 64, id 61132, offset 0, flags [DF], proto TCP (6), length 68)

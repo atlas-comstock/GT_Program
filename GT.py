@@ -7,6 +7,7 @@
 __author__ = 'YongHao Hu'
 
 import analyse_socket
+import numpy as np
 import analyse_packet
 
 class Discriminators(object):
@@ -101,7 +102,8 @@ print min(forward_msg_length)
 print max(forward_msg_length)
 print sum(forward_msg_length)
 print sum(forward_msg_length)/len(forward_msg_length)
-
+print "standard"
+print np.std(forward_msg_length, axis=0)
 
 print "backward_msg_length"
 backward_msg_length = [int(i) for i in backward_msg_length]
@@ -109,6 +111,7 @@ print min(backward_msg_length)
 print max(backward_msg_length)
 print sum(backward_msg_length)
 print sum(backward_msg_length)/len(backward_msg_length)
+print np.std(backward_msg_length, axis=0)
 
 print "num_of_push_forward_message"
 print num_of_push_forward_message
@@ -120,10 +123,12 @@ print "arrive_timegap_of_forward_message"
 print min(arrive_timegap_of_forward_message)
 print max(arrive_timegap_of_forward_message)
 print sum(arrive_timegap_of_forward_message)/len(arrive_timegap_of_forward_message)
+print np.std(arrive_timegap_of_forward_message, axis=0)
 print "arrive_timegap_of_backward_message"
 print min(arrive_timegap_of_backward_message)
 print max(arrive_timegap_of_backward_message)
 print sum(arrive_timegap_of_backward_message)/len(arrive_timegap_of_backward_message)
+print np.std(arrive_timegap_of_backward_message, axis=0)
 print "time_duration_of_stream"
 print min(all_timestamp)
 print max(all_timestamp)
